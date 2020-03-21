@@ -1,11 +1,11 @@
 package com.example.android.coronavirus;
 
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
 
-    private static String BASE_URL="https://corona.lmao.ninja/";
+    private static String BASE_URL = "https://corona.lmao.ninja/";
     private CasesApi casesApi;
 
     @Override
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recylerview);
 
 
-        Retrofit retrofit =  new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -53,8 +53,12 @@ public class MainActivity extends AppCompatActivity {
 //                  textView.setText("Code" + response.code());
                     //return;
                 }
+
+
 //                List<Case> cases = response.body();
                 cases = new ArrayList<>(response.body());
+
+                Log.d("Cases", "Cases here " + cases.get(0).toString());
                 setupAdapter(response.body());
 //
 //                for(Case corona: cases){
@@ -77,14 +81,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Case>> call, Throwable t) {
 
-            Log.d("Error", "Error occurred " + t.getMessage());
+                Log.d("Error", "Error occurred " + t.getMessage());
             }
         });
 
 
     }
 
-   private void setupAdapter(List<Case> body) {
+    private void setupAdapter(List<Case> body) {
         CaseAdapter caseAdapter = new CaseAdapter(body, MainActivity.this);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         recyclerView.setHasFixedSize(true);

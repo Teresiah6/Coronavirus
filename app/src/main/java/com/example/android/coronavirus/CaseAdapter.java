@@ -9,14 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class CaseAdapter extends RecyclerView.Adapter<CaseAdapter.ViewHolder> {
 
     //vars
-    private ArrayList<Case> cases= new ArrayList<>();
+    private List<Case> cases;
     private Context context;
 
     public CaseAdapter(List<Case> cases, Context context) {
@@ -37,15 +36,16 @@ public class CaseAdapter extends RecyclerView.Adapter<CaseAdapter.ViewHolder> {
 
         Case coronaCase = cases.get(position);
 
-        holder.country.setText(coronaCase.country);
-        holder.cases.setText(coronaCase.cases);
-        holder.todayCases.setText(coronaCase.todayCases);
-        holder.deaths.setText(coronaCase.deaths);
-        holder.todayDeaths.setText(coronaCase.todayCases);
-        holder.recovered.setText(coronaCase.recovered);
-        holder.active.setText(coronaCase.active);
-        holder.critical.setText(coronaCase.critical);
-        holder.casesPerOneMillion.setText(coronaCase.casePerOneMillion);
+
+        holder.country.setText(coronaCase.getCountry());
+        holder.cases.setText(String.valueOf(coronaCase.cases));
+        holder.todayCases.setText(String.valueOf(coronaCase.todayCases));
+        holder.deaths.setText(String.valueOf(coronaCase.deaths));
+        holder.todayDeaths.setText(String.valueOf(coronaCase.todayCases));
+        holder.recovered.setText(String.valueOf(coronaCase.recovered));
+        holder.active.setText(String.valueOf(coronaCase.active));
+        holder.critical.setText(String.valueOf(coronaCase.critical));
+        holder.casesPerOneMillion.setText(String.valueOf(coronaCase.casePerOneMillion));
 
 
     }
@@ -55,28 +55,28 @@ public class CaseAdapter extends RecyclerView.Adapter<CaseAdapter.ViewHolder> {
         return cases.size();
     }
 
-    public  class ViewHolder extends RecyclerView.ViewHolder{
-      TextView country;
-      TextView cases;
-      TextView todayCases;
-      TextView deaths;
-      TextView todayDeaths;
-      TextView recovered;
-      TextView active;
-      TextView critical;
-      TextView casesPerOneMillion;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView country;
+        TextView cases;
+        TextView todayCases;
+        TextView deaths;
+        TextView todayDeaths;
+        TextView recovered;
+        TextView active;
+        TextView critical;
+        TextView casesPerOneMillion;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             country = itemView.findViewById(R.id.country);
-            cases= itemView.findViewById(R.id.cases);
-            todayCases= itemView.findViewById(R.id.todayCases);
-            deaths= itemView.findViewById(R.id.deaths);
-            todayDeaths= itemView.findViewById(R.id.todayDeaths);
-            recovered=itemView.findViewById(R.id.recovered);
-            active= itemView.findViewById(R.id.critical);
-            critical=itemView.findViewById(R.id.critical);
-            casesPerOneMillion=itemView.findViewById(R.id.casesPerOneMillion);
+            cases = itemView.findViewById(R.id.cases);
+            todayCases = itemView.findViewById(R.id.todayCases);
+            deaths = itemView.findViewById(R.id.deaths);
+            todayDeaths = itemView.findViewById(R.id.todayDeaths);
+            recovered = itemView.findViewById(R.id.recovered);
+            active = itemView.findViewById(R.id.active);
+            critical = itemView.findViewById(R.id.critical);
+            casesPerOneMillion = itemView.findViewById(R.id.casesPerOneMillion);
 
         }
     }
