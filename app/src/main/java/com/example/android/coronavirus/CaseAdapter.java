@@ -38,14 +38,14 @@ public class CaseAdapter extends RecyclerView.Adapter<CaseAdapter.ViewHolder> {
 
 
         holder.country.setText(coronaCase.getCountry());
-        holder.cases.setText(String.valueOf(coronaCase.cases));
-        holder.todayCases.setText(String.valueOf(coronaCase.todayCases));
-        holder.deaths.setText(String.valueOf(coronaCase.deaths));
-        holder.todayDeaths.setText(String.valueOf(coronaCase.todayCases));
-        holder.recovered.setText(String.valueOf(coronaCase.recovered));
-        holder.active.setText(String.valueOf(coronaCase.active));
-        holder.critical.setText(String.valueOf(coronaCase.critical));
-        holder.casesPerOneMillion.setText(String.valueOf(coronaCase.casePerOneMillion));
+        holder.cases.setText(String.valueOf("Cases: " +coronaCase.cases));
+        holder.todayCases.setText(String.valueOf("Today's Cases:  " +coronaCase.todayCases));
+        holder.deaths.setText(String.valueOf("Deaths: " + coronaCase.deaths));
+        holder.todayDeaths.setText(String.valueOf("Today's Deaths: "+ coronaCase.todayCases));
+        holder.recovered.setText(String.valueOf("Recovered: "+ coronaCase.recovered));
+        holder.active.setText(String.valueOf("Active cases: "+ coronaCase.active));
+        holder.critical.setText(String.valueOf("Critical: "  + coronaCase.critical));
+        holder.casesPerOneMillion.setText(String.valueOf("Cases Per One Million: " + coronaCase.casePerOneMillion));
 
 
     }

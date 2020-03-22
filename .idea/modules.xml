@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-Coronavirus.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-Coronavirus.iml" group="Coronavirus" />
       <module fileurl="file://$PROJECT_DIR$/Coronavirus.iml" filepath="$PROJECT_DIR$/Coronavirus.iml" group="Coronavirus" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Coronavirus/app" />
     </modules>
