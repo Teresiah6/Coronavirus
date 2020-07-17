@@ -41,7 +41,7 @@ public class CaseAdapter extends RecyclerView.Adapter<CaseAdapter.ViewHolder> {
         holder.cases.setText(String.valueOf("Cases: " +coronaCase.cases));
         holder.todayCases.setText(String.valueOf("Today's Cases:  " +coronaCase.todayCases));
         holder.deaths.setText(String.valueOf("Deaths: " + coronaCase.deaths));
-        holder.todayDeaths.setText(String.valueOf("Today's Deaths: "+ coronaCase.todayCases));
+        holder.todayDeaths.setText(String.valueOf("Today's Deaths: "+ coronaCase.todayDeaths));
         holder.recovered.setText(String.valueOf("Recovered: "+ coronaCase.recovered));
         holder.active.setText(String.valueOf("Active cases: "+ coronaCase.active));
         holder.critical.setText(String.valueOf("Critical: "  + coronaCase.critical));

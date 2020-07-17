@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 
 public interface CasesApi {
 
-    @GET("countries")
+    @GET("v2/countries")
     Call<List<Case>>getCases();
 
     @GET("countries/{countryName}")

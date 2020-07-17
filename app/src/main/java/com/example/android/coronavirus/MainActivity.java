@@ -69,7 +69,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                     //return;
                 }
 //                List<Case> cases = response.body();
-                cases = new ArrayList<>(response.body());
+
+                if (response.body() != null) {
+                    cases = new ArrayList<>(response.body());
+                }
                 setupAdapter(response.body());
 //
 //                for(Case corona: cases){
